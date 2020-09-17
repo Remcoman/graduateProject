@@ -7,7 +7,11 @@
     "predata": "rimraf ./src",
     "data": "dato dump; node dato.config.js",
     "prebuild": "rimraf ./dist",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:html": "chokidar './src/**/*.+(html|ejs)' -c 'npm run build'",
+    "watch:css": "chokidar './src/**/*.css' -c 'npm run build'",
+    "watch:js": "chokidar './src/**/*.js' -c 'npm run build'"
   },
   "repository": {
     "type": "git",
