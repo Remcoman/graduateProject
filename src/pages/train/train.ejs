@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Train</title>
+	</head>
+	<body>
+        <% include ../../components/aside/aside %> 
+        <% include ../../components/notification/notification %> 
+		<form id="userInputTrainingForm" action="">
+			<fieldset>
+				<legend>Gebruikers input</legend>
+                <% include ../../components/form/form-row/form-row %> 
+                <% include ../../components/form/form-footer/form-footer %> 
+			</fieldset>
+		</form>
+		<form id="chatbotReactionTrainingForm" action="">
+			<fieldset>
+				<legend>Chatbot reactie</legend>
+                <% include ../../components/form/form-row/form-row %> 
+                <% include ../../components/form/form-footer/form-footer %> 
+			</fieldset>
+		</form>
+		
+		<button type="button" data-execute-training>Training uitvoeren</button>
+		
+		<% include ../../components/scripts/firebase-scripts %> 
+		
+		<!-- <script defer src="../../scripts/test.js"></script> -->
+		<!-- <script defer src="./init-firebase.js"></script>
+		<script defer src="./submitTraining.js"></script>
+		<script defer src="./logout.js"></script> -->
+	</body>
+</html>
