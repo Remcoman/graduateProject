@@ -6,8 +6,24 @@
 		<title>Login</title>
 	</head>
 	<body class="login">
-		<h1>Login</h1>
-		<p>content goes here</p>
-		<% include ../../components/paragraph %>
+		<% include ../../components/notification/notification %> 
+		
+		<form action="" login-form>
+			<span class="error"></span>
+			<label>
+				Email
+				<input type="email" email-input />
+			</label>
+
+			<label>
+				Wachtwoord
+				<input type="password" password-input />
+			</label>
+			<button login-button>Login</button>
+			<button class="hide" register-button>Registreer account</button>
+		</form>
+		<button type="submit" signUp-button>Maak account</button>
+
+		<% include ../../components/scripts/firebase-scripts %> 
 	</body>
 </html>
