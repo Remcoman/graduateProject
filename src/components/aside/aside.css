@@ -1,0 +1,23 @@
+.aside {
+    border-right: 1px solid black;
+    width: 5rem;
+    height: 100vh;
+    margin-right: 1rem;
+    float: left;
+    padding: 1rem;
+}
+.aside a {
+    text-align: center;
+}
+.aside svg {
+    width: 2em;
+}
+.aside nav {
+    width: 5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.aside nav > * {
+    margin: auto 0;
+}
