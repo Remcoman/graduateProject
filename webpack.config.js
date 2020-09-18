@@ -1,12 +1,14 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: {
         home: './src/pages/home/home.js',
-        login: './src/pages/login/login.js'
+        login: './src/pages/login/login.js',
+        train: './src/pages/train/train.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -40,7 +42,33 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            }
+            },
+              {
+                test: /\.(png|svg|jpe?g|gif)$/,
+                use: [
+                  { loader:'file-loader', 
+                    options: {
+                        esModule: false,
+                        name: '[contenthash].[ext]',
+                        outputPath: 'assets',
+                    }
+                },
+                ],
+              },
+              {
+                test: /\.(jpg|png|gif|svg)$/,
+                loader: 'image-webpack-loader',
+                enforce: 'pre'
+              },
+              {
+                test: [/\.js$/, /\.jsx?$/],
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/env', '@babel/react'],
+                  plugins: ['@babel/plugin-transform-runtime'],
+                },
+              },
         ]
     },
     plugins: [
@@ -62,6 +90,18 @@ module.exports = {
             },
             hash: true,
         }),
+        new HtmlWebpackPlugin({
+            filename: './train/index.html',
+            template: '!!ejs-webpack-loader!src/pages/train/train.ejs',
+            chunks: ['train'],
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+        }),
+        new ScriptExtHtmlWebpackPlugin({
+            defaultAttribute: 'defer'
+          }),
         new MiniCssExtractPlugin({
             filename: '[name].[hash:8].css'
         }),
