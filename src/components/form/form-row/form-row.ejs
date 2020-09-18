@@ -1,0 +1,49 @@
+<div class="form-row" data-form-row>
+	<div class="form-field">
+		<label>
+			<div class="label">Taal</div>
+			<select name="Taal" class="language" required>
+				<option>NL</option>
+			</select>
+		</label>
+	</div>
+	<div class="form-field">
+		<label>
+			<div class="label">Opmerking</div>
+			<textarea
+				class="form-textarea utterance"
+				name="Text1"
+				cols="40"
+				rows="1"
+				placeholder="Waar blijft mijn bestelling?"
+				required
+			></textarea>
+		</label>
+	</div>
+	<div class="form-field">
+		<label>
+			<div class="label">Categorie</div>
+			<input
+				type="text"
+				class="intent"
+				placeholder="bestelling.status"
+				required
+			/>
+		</label>
+	</div>
+	<div class="form-field">
+		<button type="button" aria-label="Delete" title="Delete" data-delete-row>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				viewBox="0 0 16 16"
+				aria-hidden="true"
+			>
+				<path
+					d="M8 15A7 7 0 118 1a7 7 0 010 14zm2.444-4.277l.009.01.28-.28a.765.765 0 000-1.081L9.366 8.003l1.371-1.37a.765.765 0 00.001-1.081l-.289-.289a.765.765 0 00-1.08 0L8.006 6.627 6.637 5.257a.765.765 0 00-1.08.001l-.29.29a.765.765 0 000 1.08l1.359 1.36-1.371 1.37a.765.765 0 00-.001 1.081l.288.289a.765.765 0 001.081-.001l1.371-1.371 1.369 1.368a.765.765 0 001.08 0z"
+				></path>
+			</svg>
+		</button>
+	</div>
+</div>

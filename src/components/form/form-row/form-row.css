@@ -1,0 +1,38 @@
+.form-row {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -16px;
+}
+.form-row > * {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    /* flex: 1; */
+    margin-left: 16px;
+    margin-top: 16px;
+}
+.form-row .label {
+    transform: scale(0.75) translate3d(-16%, -120%, 0);
+}
+.form-row .label {
+    position: absolute;
+}
+.form-row .form-field {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.form-row + .form-row .label {
+    position: absolute;
+    visibility: hidden;
+}
+.fomr-row .form-textarea .utterance {
+    resize: vertical;
+}
+.form-row .error {
+    border: 1px solid red;
+}
