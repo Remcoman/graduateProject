@@ -1,0 +1,11 @@
+.notification {
+    height: 18px;
+    width: 100%;
+    color: white;
+}
+.notification.success {
+    background-color: green;
+}
+.notification.error {
+    background-color: red;
+}
