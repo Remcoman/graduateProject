@@ -62,16 +62,16 @@ exports.handler = async function (event, context) {
             for (const [key, value] of Object.entries(chatbotOrUser)) {
                 value.forEach(input => {
                     if (!input) return
-                    const { language, intent:intentvalue, utterance } = input
+                    const { language, intent, utterance } = input
                     const chatbotOutput = key === 'chatbotReactionTrainingForm'
 
                     // 3.2  Zo nee, train model
                     if (chatbotOutput) {
-                        chatbotAnswerFallBack.push({ language, intentvalue, utterance })
-                        nlp.addAnswer(language, intentvalue, utterance);
+                        chatbotAnswerFallBack.push({ language, intent, utterance })
+                        nlp.addAnswer(language, intent, utterance);
                     }
                     else {
-                        nlp.addDocument(language, utterance, intentvalue);
+                        nlp.addDocument(language, utterance, intent);
                     }
                 });
             }
