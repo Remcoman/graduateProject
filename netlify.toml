@@ -1,9 +1,9 @@
+[build]
+  command = "#"
+  functions = "./functions"
+
 [[redirects]]
   from = "/"
   to = "/login"
   status = 200
   force = true
-
-[build]
-  command = "#"
-  functions = "./functions"
