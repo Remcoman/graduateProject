@@ -62,17 +62,16 @@ exports.handler = async function (event, context) {
             for (const [key, value] of Object.entries(chatbotOrUser)) {
                 value.forEach(input => {
                     if (!input) return
-                    const { language, intent, utterance } = input
+                    const { language, intent:intentvalue, utterance } = input
                     const chatbotOutput = key === 'chatbotReactionTrainingForm'
 
                     // 3.2  Zo nee, train model
                     if (chatbotOutput) {
-                        chatbotAnswerFallBack.push({ language, intent, utterance })
-                        nlp.addAnswer(language, intent, utterance);
-
+                        chatbotAnswerFallBack.push({ language, intentvalue, utterance })
+                        nlp.addAnswer(language, intentvalue, utterance);
                     }
                     else {
-                        nlp.addDocument(language, utterance, intent);
+                        nlp.addDocument(language, utterance, intentvalue);
                     }
                 });
             }
@@ -97,7 +96,7 @@ exports.handler = async function (event, context) {
         }
 
         if (intent === 'None') answers.push('Ik ben niet goed genoeg getrained om deze vraag te beantwoorden...')
-
+        console.log({ 'result': { intent, answers }, 'statusCode': 200 });
         return {
             statusCode: 200,
             body: JSON.stringify({ 'result': { intent, answers }, 'statusCode': 200 })
