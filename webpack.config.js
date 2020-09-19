@@ -8,7 +8,8 @@ module.exports = {
     entry: {
         home: './src/pages/home/home.js',
         login: './src/pages/login/login.js',
-        train: './src/pages/train/train.js'
+        train: './src/pages/train/train.js',
+        chatbot: './src/pages/chatbot/chatbot.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -94,6 +95,15 @@ module.exports = {
             filename: './train/index.html',
             template: '!!ejs-webpack-loader!src/pages/train/train.ejs',
             chunks: ['train'],
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+        }),
+        new HtmlWebpackPlugin({
+            filename: './chatbot/index.html',
+            template: '!!ejs-webpack-loader!src/pages/chatbot/chatbot.ejs',
+            chunks: ['chatbot'],
             minify: {
                 collapseWhitespace: true
             },
