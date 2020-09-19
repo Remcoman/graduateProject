@@ -1,6 +1,7 @@
 [build]
   command = "#"
   functions = "./functions"
+  publish = "/dist/"
 
 [[redirects]]
   from = "/"
