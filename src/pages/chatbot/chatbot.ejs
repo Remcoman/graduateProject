@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chatbot</title>
+	</head>
+	<body class="chatbot">
+		<% include ../../components/aside/aside %> 
+		<div>
+			<ul chatbot-conversation>
+				<li class="chatbot">
+					Welkom! Je kan nu testen of ik genoeg geleerd heb. Zo niet? Train me
+					dan met meer data!
+				</li>
+			</ul>
+			<form action="" chatbot-input-form>
+				<input
+					type="text"
+					placeholder="Typ hier je bericht"
+					chatbot-input-value
+				/>
+				<button>verstuur</button>
+			</form>
+		</div>
+		<% include ../../components/scripts/firebase-scripts %> 
+	</body>
+</html>
