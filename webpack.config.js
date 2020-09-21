@@ -10,6 +10,7 @@ module.exports = {
         login: './src/pages/login/login.js',
         train: './src/pages/train/train.js',
         chatbot: './src/pages/chatbot/chatbot.js',
+        history: './src/pages/history/history.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -104,6 +105,15 @@ module.exports = {
             filename: './chatbot/index.html',
             template: '!!ejs-webpack-loader!src/pages/chatbot/chatbot.ejs',
             chunks: ['chatbot'],
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+        }),
+        new HtmlWebpackPlugin({
+            filename: './history/index.html',
+            template: '!!ejs-webpack-loader!src/pages/history/history.ejs',
+            chunks: ['history'],
             minify: {
                 collapseWhitespace: true
             },
