@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>History</title>
+	</head>
+	<body>
+        <% include ../../components/aside/aside %> 
+		
+		<div id="trainingHistoryWrapper" style="float: left">
+			<% include ../../components/notification/notification %> 
+			<button type="button" data-update-changes style="width: 100%">
+				Wijzigingen opslaan
+			</button>
+			<form id="userInputTrainingForm" action="">
+				<fieldset>
+					<legend>Gebruikers input</legend>
+					<% include ../../components/form/form-row/form-row %> 
+				</fieldset>
+			</form>
+			<form id="chatbotReactionTrainingForm" action="">
+				<fieldset>
+					<legend>Chatbot reactie</legend>
+					<% include ../../components/form/form-row/form-row %>
+				</fieldset>
+			</form>
+		</div>
+		
+		<% include ../../components/scripts/firebase-scripts %> 
+	</body>
+</html>
