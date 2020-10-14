@@ -14,6 +14,7 @@ const registerTrigger = document.querySelector('[register-button]')
 const form = document.querySelector('[login-form]')
 const notificationHandle = document.querySelector('[data-notification-handle]')
 const allStatusClassNames = ['success', 'error']
+let signUpClicked = false
 
 const notificationHandler = (message, status) => {
     message ? notificationHandle.innerHTML = message : notificationHandle.innerHTML = ""
@@ -72,9 +73,6 @@ const submitForm = (e) => {
             const message = firebaseError[e.code]
             notificationHandler(message, 'error')
         })
-    // promise.catch = err => {
-
-    // }
 }
 
 loginTrigger.addEventListener('click', submitForm)
@@ -82,6 +80,7 @@ loginTrigger.addEventListener('click', submitForm)
 
 signUpTrigger.addEventListener('click', e => {
     e.preventDefault()
+    if (signUpClicked) return
     const injectAfterLabel = passwordInput.parentElement.nextSibling
     const repeatPasswordNode = passwordInput.cloneNode()
     const repeatPasswordLabel = document.createElement("label")
@@ -96,6 +95,7 @@ signUpTrigger.addEventListener('click', e => {
     loginTrigger.classList.toggle('hide')
     signUpTrigger.classList.toggle('hide')
     registerTrigger.classList.toggle('hide')
+    signUpClicked = true
 })
 
 registerTrigger.addEventListener('click', submitForm)

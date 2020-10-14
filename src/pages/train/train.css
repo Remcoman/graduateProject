@@ -1,0 +1,25 @@
+/* #active {
+    background-color: red;
+} */
+.train {
+    background-color: #faf9fc;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.train .form {
+    margin: 1rem;
+    margin-top: 0;
+}
+
+.train .form fieldset {
+    padding: 0;
+    padding: 1rem;
+    border: 0;
+    border-radius: .5rem;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+}
+
+.train .form fieldset legend{
+    padding-top: 3rem;
+}

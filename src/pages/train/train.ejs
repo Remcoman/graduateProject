@@ -3,22 +3,55 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<% include ../../components/fonts/fonts %>
+
 		<title>Train</title>
 	</head>
-	<body>
+	<body class="train">
         <% include ../../components/aside/aside %> 
         <% include ../../components/notification/notification %> 
-		<form id="userInputTrainingForm" action="">
+	
+		<select name="" id="" train-tree-option>
+			<option hidden disabled selected value> -- Maak een keus -- </option>
+		</select>
+		<form id="userInputTrainingForm" action="" class="form">
 			<fieldset>
 				<legend>Gebruikers input</legend>
+				<details previous-utterances>
+					<summary>Eerdere resultaten</summary>
+					
+				</details>
                 <% include ../../components/form/form-row/form-row %> 
                 <% include ../../components/form/form-footer/form-footer %> 
 			</fieldset>
 		</form>
-		<form id="chatbotReactionTrainingForm" action="">
+		<form id="chatbotReactionTrainingForm" action="" class="form">
 			<fieldset>
 				<legend>Chatbot reactie</legend>
-                <% include ../../components/form/form-row/form-row %> 
+				<% include ../../components/form/form-row/form-row %> 
+				<div class="form-field">
+					<label class="quickAnswer">
+						<div class="label">Snelle antwoorden</div>
+						<input type="text" placeholder="referenende naam"/>
+					</label>
+				</div>
+				<button add-quick-answer-field>Voeg veld toe</button>
+				<div class="form-field">
+					<p>Externe links</p>
+					<div id="allExternalLinks">
+						<div id="externalLink" class="externalLinkWrapper hide">
+							<label  name-of-external-link>
+								<div class="label">Naam van verwijzing</div>
+								<input type="text" placeholder="verwijzing"/>
+							</label>
+							<label url-of-external-link>
+								<div class="label">URL van verwijzing</div>
+								<input type="url" placeholder="https://www.loavies.nl/verwijzing"/>
+							</label>
+						</div>
+					</div>
+				</div>
+				<button add-external-link-field>Voeg veld toe</button>
                 <% include ../../components/form/form-footer/form-footer %> 
 			</fieldset>
 		</form>

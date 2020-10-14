@@ -11,6 +11,7 @@ module.exports = {
         train: './src/pages/train/train.js',
         chatbot: './src/pages/chatbot/chatbot.js',
         history: './src/pages/history/history.js',
+        tree: './src/pages/tree/tree.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -114,6 +115,15 @@ module.exports = {
             filename: './history/index.html',
             template: '!!ejs-webpack-loader!src/pages/history/history.ejs',
             chunks: ['history'],
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+        }),
+        new HtmlWebpackPlugin({
+            filename: './tree/index.html',
+            template: '!!ejs-webpack-loader!src/pages/tree/tree.ejs',
+            chunks: ['tree'],
             minify: {
                 collapseWhitespace: true
             },

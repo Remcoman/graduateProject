@@ -1,17 +1,24 @@
 <aside class="aside">
     <nav>
-        <button class="hide" logout-button>Logout</button>
+        <button logout-button>
+            <img src=../<%= require("../../images/svg/logout.svg") %> alt="">
+            Logout
+        </button>
         <a href="../train">
-            Train AI
             <img src=../<%= require("../../images/svg/train.svg") %> alt="">
+            Train AI
         </a>
         <a href="../history">
-        Eerdere resultaten
-        <img src=../<%= require("../../images/svg/clock.svg") %> alt="">
-    </a>
-    <a href="../chatbot">
-        Test chatbot
-        <img src=../<%= require("../../images/svg/chatbot.svg") %> alt="">            
+            <img src=../<%= require("../../images/svg/clock.svg") %> alt="">
+            Resultaten
+        </a>
+        <a href="../tree">
+            <img src=../<%= require("../../images/svg/tree.svg") %> alt="">
+            Tree
+        </a>
+        <a href="../chatbot">
+            <img src=../<%= require("../../images/svg/chatbot.svg") %> alt="">            
+            Test chatbot
         </a>
     </nav>
 </aside>
