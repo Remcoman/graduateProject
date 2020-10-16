@@ -1,15 +1,13 @@
 .form-row {
     -webkit-box-align: start;
     -ms-flex-align: start;
-    align-items: flex-start;
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    /* flex-wrap: wrap; */
-    flex-flow: column;
-    /* margin-left: -16px; */
-    margin: 1rem;
+    /* margin: 1rem 0; */
+    align-items: flex-end;
+    gap: 1rem;
+    justify-content: space-between;
 }
 
 .form-row .label {
@@ -19,7 +17,12 @@
     position: absolute;
 }
 .form-row .form-field {
-    width: 100%;
+    /* width: 100%; */
+    
+}
+
+.form-field {
+    /* margin-top: 1rem; */
 }
 .form-row + .form-row .label {
     position: absolute;
@@ -28,6 +31,7 @@
 
 .form-row .form-field label {
     width: 100%;
+    display: flex;
 }
 
 .fomr-row .form-textarea .utterance {
@@ -44,7 +48,7 @@
 	border: 1px solid;
 	border-color: #abafb7;
 	padding-left: .5rem;
-	margin: .5rem 0 1.5rem;
+	margin: .5rem 0 0rem;
     color: #2d2c2d;
     resize: vertical;
     width: 100%;
@@ -61,18 +65,23 @@
 .form-row .form-field button {
     width: 100%;
     border: 0;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 .5rem .5rem 0;
     height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1rem;
     color: grey;
+    gap: .5rem;
 }
 
-.form-row .form-field button  > * {
-    margin: 0 .5rem
+.form-row .form-field button svg {
+    width: 1rem;
+    fill: grey;
 }
+
+/* .form-row .form-field button  > * {
+    margin: 0 .5rem
+} */
 
 
 .form-row .form-field input::placeholder, .form-row .form-field textarea::placeholder, .form-field select::placeholder {

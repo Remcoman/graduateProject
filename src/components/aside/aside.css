@@ -7,7 +7,7 @@
     padding-right: 2rem;
     background: rgb(174,145,248);
     background: linear-gradient(180deg, rgba(174,145,248,1) 0%, rgba(70,127,238,1) 100%);
-    position: relative;
+    position: fixed;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
