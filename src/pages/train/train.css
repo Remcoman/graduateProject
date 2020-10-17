@@ -129,6 +129,7 @@
     display: flex;
     gap: 1rem;
     align-items: flex-end;
+    margin-bottom: 2rem;
 }
 
 .train .externalLinkWrapper label {
@@ -143,6 +144,15 @@
     align-items: center;
     justify-content: center;
     color: grey;
+}
+
+.train .externalLinkWrapper .label {
+    transform: scale(.75) translate3d(-16%,-120%,0);
+    position: absolute;
+}
+
+.train .allExternalLinks-label {
+    margin: 1.5rem 0;
 }
 
 .train .quickAnswer-wrapper button, .train .externalLinkWrapper button {
