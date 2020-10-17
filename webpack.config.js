@@ -10,7 +10,6 @@ module.exports = {
         login: './src/pages/login/login.js',
         train: './src/pages/train/train.js',
         chatbot: './src/pages/chatbot/chatbot.js',
-        tree: './src/pages/tree/tree.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -105,15 +104,6 @@ module.exports = {
             filename: './chatbot/index.html',
             template: '!!ejs-webpack-loader!src/pages/chatbot/chatbot.ejs',
             chunks: ['chatbot'],
-            minify: {
-                collapseWhitespace: true
-            },
-            hash: true,
-        }),
-        new HtmlWebpackPlugin({
-            filename: './tree/index.html',
-            template: '!!ejs-webpack-loader!src/pages/tree/tree.ejs',
-            chunks: ['tree'],
             minify: {
                 collapseWhitespace: true
             },
