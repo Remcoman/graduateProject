@@ -110,7 +110,7 @@ const createExternalLinkInputs = (value) => {
     newElement.classList.remove('hide')
     const button = newElement.querySelector('button')
     button.addEventListener('click', removeQuickAnswerOrExternalLink)
-    
+
     if (value) {
         const keys = Object.keys(value)
         keys.forEach(key => {
@@ -122,19 +122,13 @@ const createExternalLinkInputs = (value) => {
     return newElement
 }
 
-const setTreeDataInDOM = (event) => {
-    console.log('setTreeDataInDOM');
-
-    stage1.open = false
-    stage2.classList.remove('closed-status')
-    stage2.open = true
-
+const clearInputs = () => {
     const previousUtteranceWrapper = document.querySelector('[previous-utterances]')
     const previousUtteranceLabels = previousUtteranceWrapper.querySelectorAll('label')
     previousUtteranceLabels.forEach(label => {
         label.remove()
     })
-    // console.log(previousUtteranceLabels);
+
     const allTextAreas = document.querySelectorAll('textarea')
     allTextAreas.forEach(textareaField => textareaField.innerHTML = "")
 
@@ -148,9 +142,17 @@ const setTreeDataInDOM = (event) => {
     const allQuickAnswerInputs = quickAnswerWrapper.querySelectorAll('input')
     allQuickAnswerInputs.forEach(input => {
         if (input.id === "quickAnswer") return
-        // input.remove()
     })
-    
+}
+
+const setTreeDataInDOM = (event) => {
+    console.log('setTreeDataInDOM');
+
+    stage1.open = false
+    stage2.classList.remove('closed-status')
+    stage2.open = true
+
+    clearInputs()
     
     const value = event.target.value
     const form = document.querySelector('#chatbotReactionTrainingForm')
@@ -372,7 +374,18 @@ const executeTraining = async (e) => {
     // const treeData = await getDataFromDb(treeRef)
     // console.log(treeData);
     treeRef.set(JSON.stringify(treeData))
-    
+    console.log('data has been set');
+    executeTrainingTrigger.disabled = true
+    const beforeWrapper = executeTrainingTrigger.querySelector('.before')
+    const afterWrapper = executeTrainingTrigger.querySelector('.after')
+    beforeWrapper.classList.add('animate')
+    afterWrapper.classList.add('animate')
+    setTimeout(() => {
+        executeTrainingTrigger.disabled = false
+        beforeWrapper.classList.remove('animate')
+        afterWrapper.classList.remove('animate')
+        clearInputs()
+    }, 4000);
 }
 // const executeTraining = async (e) => {
 //     const userInputTrainingForm = document.getElementById('userInputTrainingForm')

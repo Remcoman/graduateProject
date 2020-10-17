@@ -175,3 +175,79 @@
     padding: .5rem;
     height: 2.1rem;
 }
+
+.train .submit-all-data {
+    width: 100%;
+    background-color: #467fee;
+    border: 0;
+    color: #fff;
+    margin-top: .5rem;
+    border-radius: .5rem;
+    height: 2rem;
+    transition: all .1s ease-in-out;
+    padding: 0 .5rem;
+}
+
+.train .submit-all-data:disabled {
+    background-color: grey;
+}
+
+.train .submit-all-data svg {
+    width: 1rem;
+    fill: white;
+}
+
+.train .submit-all-data .before {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    transition: .1s ease-in-out;
+    height: 2rem;
+    transform: rotate3d(1, 0, 0, 0deg);
+}
+
+.train .submit-all-data .after {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    transform: rotate3d(1, 0, 0, 90deg);
+    margin-top: -2rem;
+}
+
+.train .submit-all-data .before.animate {
+    animation: animateOut 4s ease-in-out;
+}
+
+.train .submit-all-data .after.animate {
+    animation: animateIn 4s ease-in-out;
+
+}
+
+@keyframes animateOut {
+    0%   {transform: rotate3d(1, 0, 0, 0deg);}
+    10%  {transform: rotate3d(1, 0, 0, 90deg);}
+    90%  {transform: rotate3d(1, 0, 0, 90deg);}
+    100%   {transform: rotate3d(1, 0, 0, 0deg);}
+  }
+
+  @keyframes animateIn {
+    0%   {transform: rotate3d(1, 0, 0, -90deg);}
+    10%   {transform: rotate3d(1, 0, 0, -90deg);}
+    20%  {transform: rotate3d(1, 0, 0, 0deg);}
+    80%  {transform: rotate3d(1, 0, 0, 0deg);}
+    90%   {transform: rotate3d(1, 0, 0, -90deg);}
+    100%   {transform: rotate3d(1, 0, 0, -90deg);}
+  }
+
+
+/* .train .submit-all-data .before.animate-out {
+    transform: rotate3d(1, 0, 0, 90deg);
+}
+
+.train .submit-all-data .after.animate-in {
+    transform: rotate3d(1, 0, 0, 0deg);
+} */
+
+
+
+
