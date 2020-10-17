@@ -1,11 +1,13 @@
 .notification {
     line-height: 18px;
     width: 100%;
-    color: white;
 }
+
 .notification.success {
-    background-color: green;
+    color: green;
+    margin-bottom: 1rem;
 }
 .notification.error {
-    background-color: red;
+    color: red;
+    margin-bottom: 1rem;
 }
