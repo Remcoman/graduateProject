@@ -161,13 +161,13 @@ const setTreeDataInDOM = (event) => {
     textarea.style.height = "";
     textarea.style.height = textarea.scrollHeight + "px"
     const allExternalLinksElement = document.querySelector('#allExternalLinks')
+    const quickAnswerWrapper = document.querySelector('.quickAnswer')
     
     console.log(treeData[value]);
     
     if (treeData[value].quickAnswers.length) {
         // console.log('if length');
         // console.log(document.getElementById('quickAnswer'));
-        // const quickAnswerWrapper = document.querySelector('.quickAnswer')
         // const inputInWrapper = quickAnswerWrapper.querySelector('input')
         // inputInWrapper.remove()
         treeData[value].quickAnswers.forEach(quickAnswerValue => {
